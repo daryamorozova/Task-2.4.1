@@ -26,19 +26,19 @@ class StatsServiceTest {
     }
 
     @Test
-    void calculateIndexMaxsales() {
+    void calculateIndexMaxSales() {
 
         StatsService service = new StatsService();
-        int actual = service.calculateIndexMaxsales(purchases);
+        int actual = service.calculateIndexMaxSales(purchases);
         int expected = 8;
         assertEquals(expected, actual);
     }
 
     @Test
-    void calculateIndexMinsales() {
+    void calculateIndexMinSales() {
 
         StatsService service = new StatsService();
-        int actual = service.calculateIndexMinsales(purchases);
+        int actual = service.calculateIndexMinSales(purchases);
         int expected = 9;
         assertEquals(expected, actual);
     }

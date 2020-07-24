@@ -2,74 +2,70 @@ package ru.netology.stats;
 
 public class StatsService {
     public int calculateSum(int[] purchases) {
-        int amountofsum = 0;
+        int amountOfSum = 0;
 
         for (int item : purchases) {
-            amountofsum = amountofsum + item;
-
+            amountOfSum = amountOfSum + item;
         }
 
-        return amountofsum;
+        return amountOfSum;
 
     }
 
     public int calculateAverageSum(int[] purchases) {
-        int amountofsum = calculateSum(purchases);
-        int numbermonth = 0;
-        for (int purchase : purchases) {
-            numbermonth = numbermonth + 1;
-        }
-        int averagesum = amountofsum / numbermonth;
+        int amountOfSum = calculateSum(purchases);
+        int numberMonth = purchases.length;
+        int averageSum = amountOfSum / numberMonth;
 
-        return averagesum;
+        return averageSum;
     }
 
 
-    public int calculateIndexMaxsales(int[] purchases) {
-        int IndexMaxsales = 0;
+    public int calculateIndexMaxSales(int[] purchases) {
+        int indexMaxSales = 0;
         for (int i = 0; i < purchases.length; i++) {
-            if (purchases[i] >= purchases[IndexMaxsales]) {
-                IndexMaxsales = i;
+            if (purchases[i] >= purchases[indexMaxSales]) {
+                indexMaxSales = i;
             }
         }
 
-        return IndexMaxsales + 1;
+        return indexMaxSales + 1;
     }
 
-    public int calculateIndexMinsales(int[] purchases) {
-        int IndexMinsales = 0;
+    public int calculateIndexMinSales(int[] purchases) {
+        int indexMinSales = 0;
         for (int i = 0; i < purchases.length; i++) {
-            if (purchases[i] < purchases[IndexMinsales]) {
-                IndexMinsales = i;
+            if (purchases[i] <= purchases[indexMinSales]) {
+                indexMinSales = i;
             }
         }
 
-        return IndexMinsales + 1;
+        return indexMinSales + 1;
     }
 
     public int calculateSaleUnderAverageSum(int[] purchases) {
-        int averagesum = calculateAverageSum(purchases);
-        int AmountMonth = 0;
+        int averageSum = calculateAverageSum(purchases);
+        int amountMonth = 0;
 
         for (int i = 0; i < purchases.length; i++) {
-            if (purchases[i] < averagesum) {
-                AmountMonth = AmountMonth + 1;
+            if (purchases[i] < averageSum) {
+                amountMonth = amountMonth + 1;
             }
         }
 
-        return AmountMonth;
+        return amountMonth;
     }
 
     public int calculateSaleOverAverageSum(int[] purchases) {
-        int averagesum = calculateAverageSum(purchases);
-        int AmountMonth = 0;
+        int averageSum = calculateAverageSum(purchases);
+        int amountMonth = 0;
 
         for (int i = 0; i < purchases.length; i++) {
-            if (purchases[i] > averagesum) {
-                AmountMonth = AmountMonth + 1;
+            if (purchases[i] > averageSum) {
+                amountMonth = amountMonth + 1;
             }
         }
 
-        return AmountMonth;
+        return amountMonth;
     }
 }
